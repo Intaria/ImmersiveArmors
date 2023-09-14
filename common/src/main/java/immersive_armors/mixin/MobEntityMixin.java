@@ -23,10 +23,10 @@ public class MobEntityMixin {
     @Inject(method = "getEquipmentForSlot(Lnet/minecraft/entity/EquipmentSlot;I)Lnet/minecraft/item/Item;", at = @At("HEAD"), cancellable = true)
     private static void immersiveArmors$injectGetEquipmentForSlot(EquipmentSlot equipmentSlot, int equipmentLevel, CallbackInfoReturnable<Item> cir) {
         final Map<Integer, ExtendedArmorMaterial> items = new HashMap<>() {{
-            put(1, Items.WARRIOR_ARMOR);
-            put(2, Items.HEAVY_ARMOR);
-            put(3, Items.DIVINE_ARMOR);
-            put(4, Items.PRISMARINE_ARMOR);
+            put(0, Items.WARRIOR_ARMOR);
+            put(1, Items.HEAVY_ARMOR);
+            put(2, Items.DIVINE_ARMOR);
+            put(3, Items.PRISMARINE_ARMOR);
         }};
 
         if (items.containsKey(equipmentLevel) && equipmentRandom.nextFloat() < Config.getInstance().mobEntityUseImmersiveArmorChance) {
