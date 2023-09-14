@@ -37,20 +37,6 @@ public interface Items {
             .antiSkeleton()
             .weight(-0.02f));
 
-    ExtendedArmorMaterial WITHER_ARMOR = registerSet(new ExtendedArmorMaterial("wither")
-            .addLoot("minecraft:chests/jungle_temple", 0.5f)
-            .addLoot("minecraft:chests/ruined_portal", 1.0f)
-            .addLoot("minecraft:chests/bastion_other", 1.0f)
-            .durabilityMultiplier(12)
-            .repairIngredient(() -> Ingredient.ofItems(net.minecraft.item.Items.BONE))
-            .protectionAmount(2, 4, 3, 2)
-            .enchantability(0)
-            .effect(new WitherArmorEffect(1.0f, 10))
-            .hideCape()
-            .equipSound(SoundEvents.ENTITY_WITHER_SKELETON_AMBIENT)
-            .antiSkeleton()
-            .weight(-0.01f));
-
     ExtendedArmorMaterial WARRIOR_ARMOR = registerSet(new ExtendedArmorMaterial("warrior")
             .addLoot("minecraft:chests/village/village_armorer", 1.0f)
             .addLoot("minecraft:chests/shipwreck_supply", 1.0f)
@@ -90,17 +76,6 @@ public interface Items {
             .effect(new MagicProtectionArmorEffect(0.2f))
             .equipSound(SoundEvents.BLOCK_WOOL_PLACE));
 
-    ExtendedArmorMaterial SLIME_ARMOR = registerSet(new ExtendedArmorMaterial("slime")
-            .addLoot("minecraft:chests/simple_dungeon", 0.25f)
-            .protectionAmount(3, 5, 4, 2)
-            .enchantability(10)
-            .durabilityMultiplier(20)
-            .repairIngredient(() -> Ingredient.ofItems(net.minecraft.item.Items.SLIME_BALL))
-            .knockbackReduction(0.25f)
-            .effect(new BouncingArmorEffect(0.25f))
-            .effect(new ExplosionProtectionArmorEffect(0.2f))
-            .equipSound(SoundEvents.ENTITY_SLIME_SQUISH));
-
     ExtendedArmorMaterial DIVINE_ARMOR = registerDyeableSet(new ExtendedArmorMaterial("divine")
             .addLoot("minecraft:chests/village/village_temple", 0.4f)
             .addLoot("minecraft:chests/bastion_treasure", 0.25f)
@@ -128,27 +103,7 @@ public interface Items {
             .enchantment(Enchantments.DEPTH_STRIDER, 2)
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_IRON));
 
-    ExtendedArmorMaterial WOODEN_ARMOR = registerSet(new ExtendedArmorMaterial("wooden")
-            .addLoot("minecraft:chests/village/village_fletcher", 0.25f)
-            .protectionAmount(1, 3, 2, 1)
-            .durabilityMultiplier(8)
-            .repairIngredient(() -> Ingredient.fromTag(ItemTags.LOGS))
-            .enchantability(4)
-            .effect(new ArrowBlockArmorEffect(0.15f))
-            .effect(new ExplosionProtectionArmorEffect(0.1f))
-            .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER));
 
-    ExtendedArmorMaterial STEAMPUNK_ARMOR = registerSet(new ExtendedArmorMaterial("steampunk")
-            .addLoot("minecraft:chests/village/village_toolsmith", 0.25f)
-            .addLoot("minecraft:chests/shipwreck_treasure", 1.0f)
-            .protectionAmount(3, 6, 3, 2)
-            .durabilityMultiplier(10)
-            .repairIngredient(() -> Ingredient.ofItems(net.minecraft.item.Items.GOLD_INGOT))
-            .enchantability(4)
-            .hideCape()
-            .effect(new ExplosionProtectionArmorEffect(0.1f))
-            .effect(new SteamTechArmorEffect())
-            .equipSound(SoundEvents.BLOCK_REDSTONE_TORCH_BURNOUT));
 
     static void bootstrap() {
 
